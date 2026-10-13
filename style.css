@@ -152,3 +152,44 @@ button:disabled { cursor:default;opacity:.5; }
   .note-nav-button span { font-size: 14px; }
 }
 .note-placeholder { width: 100%; aspect-ratio: 1.85; }
+/* Collection-only layout and reading tools */
+.filters-panel { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.note-card .coin-info { width:100%; }
+.coin-top { width:100%;align-items:center; }
+.coin-top > span:last-child { margin-left:auto;text-align:right; }
+.summary-bottom { justify-content:flex-end; }
+.fixed-details { flex:0 0 auto;margin:0;padding:12px 28px 16px;gap:10px; }
+.fixed-details .detail-box { padding:8px 12px; }
+.fixed-details .detail-box strong { font-size:20px; }
+.fixed-details .detail-box span { font-size:11px; }
+.note-summary { padding-bottom:12px;border-bottom:0; }
+.description-scroll { padding-top:0;flex:1; }
+.description-heading { display:flex;align-items:center;justify-content:space-between;gap:12px; }
+.description-heading h3 { margin:12px 0; }
+#noteDescription { cursor:zoom-in; }
+#noteDescription a { cursor:pointer; }
+.zoom-dialog { padding:60px 16px 16px;overflow:hidden; }
+.zoom-controls { position:absolute;left:16px;top:12px;display:flex;align-items:center;gap:12px;color:white;z-index:6; }
+#zoomViewport { width:100%;height:100%;overflow:auto;display:flex; }
+#zoomImage { max-width:none;max-height:none;object-fit:contain;flex-shrink:0;margin:auto; }
+.reading-dialog { width:96vw;max-width:1400px;max-height:94vh;height:94vh;overflow-y:auto;padding:40px; }
+#readingContent { max-width:1100px;margin:auto;font-size:20px;line-height:1.7; }
+#readingContent h2 { padding-right:40px; }
+#readingContent .description-block.with-image { grid-template-columns:minmax(0,40%) minmax(0,1fr); }
+#readingContent img { width:100%;height:auto; }
+#readingContent a { color:var(--accent); }
+@media(max-width:700px) {
+ .filters-panel { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .fixed-details { padding:8px 18px 14px; }
+ .description-scroll { max-height:65vh; }
+ .reading-dialog { padding:54px 18px 24px; }
+ #readingContent { font-size:18px; }
+ #readingContent .description-block.with-image { grid-template-columns:1fr; }
+}
+/* Point-and-click magnification */
+.header-zero { font: inherit; color: inherit; vertical-align: baseline; }
+.zoom-dialog { padding:50px 16px 16px; }
+#zoomViewport { position:relative; }
+#zoomImage { cursor:zoom-in; }
+#readingContent { cursor:zoom-out; }
+#readingContent img { cursor:zoom-in; }
